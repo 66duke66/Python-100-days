@@ -42,6 +42,7 @@ def shuixianhuashu2(a=100, b=10001):
 # 百钱百鸡：公鸡5(a)元一只，母鸡3(b)元一只，小鸡1/3(c)元一只，用100(f)块钱买100(g)只鸡，问公鸡x、母鸡y、小鸡z各有多少只？
 def baiqianbaiji(a, b, c, f, g):
     """
+    F钱G鸡
     :param a: 公鸡单价
     :param b: 母鸡单价
     :param c: 小鸡单价
@@ -62,6 +63,7 @@ def baiqianbaiji(a, b, c, f, g):
 
 def craps():
     """
+    CRAPS赌博游戏
     :return: 赌局结果
     """
     num = 0
@@ -89,6 +91,7 @@ def craps():
 # 生成斐波那契数列的前20个数。从第三个数开始，每个数都是它前面两个数的和，形如：1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...。
 def fbnqsl(fbnq):
     """
+    求斐波那契数列
     :param fbnq: 目标数列长度
     :return: 斐波那契数列(列表)
     """
@@ -99,21 +102,41 @@ def fbnqsl(fbnq):
 
 
 # 找出10000以内的完美数。它的所有的真因子（即除了自身以外的因子）的和（即因子函数）恰好等于它本身如：6（$6=1+2+3$）和28（$28=1+2+4+7+14$）
-lista = []
-for a in range(1, 10001):
-    lists = []
-    for b in range(1, a):
-        if a % b == 0:
-            lists.append(b)
-    if sum(lists) == a:
-        lista.append(a)
-print(lista)
+def wanmeishu(qishi, zhongzhi):
+    """
+    求完美数
+    :param qishi: 起始值
+    :param zhongzhi: 终止值
+    :return: 范围内的完美数（列表）
+    """
+    lista = []
+    for wms in range(qishi, zhongzhi + 1):
+        lists = []
+        for wms0 in range(1, wms):
+            if wms % wms0 == 0:
+                lists.append(b)
+        if sum(lists) == wms:
+            lista.append(a)
+    return lista
+
 
 # 输出100以内所有的素数。说明：素数指的是只能被1和自身整除的正整数（不包括1）。
-for a in range(2, 101):
-    b = 0
-    for c in range(2, a):
-        if a % c == 0:
-            b += 1
-    if b == 0:
-        print(a)
+def sushu(qishi, zhongzhi):
+    """
+    求素数
+    :param qishi: 起始值
+    :param zhongzhi: 终止值
+    :return: 范围内的素数（列表）
+    """
+    sushu0 = []
+    for a in range(qishi, zhongzhi):
+        b = 0
+        for c in range(2, a):
+            if a % c == 0:
+                b += 1
+        if b == 0:
+            sushu0.append(a)
+    sushu0.remove(1)
+    return sushu0
+
+
